@@ -433,8 +433,8 @@ Webhook → HTTP Request → Respond to Webhook
 | :--- | :--- | :--- |
 | **Webhook** | Path | `consulta` |
 | **Webhook** | Method | POST |
-| **Switch** | Data Type | String |
-| **Switch** | Property | `{{ $json.body.tipo }}` |
+| **if** | Condition | {{ $json.body.tipo }} is equal to 'proceso' |
+| **if** | Default | cursos  |
 | **Switch** | Routing Rules | - Rama 0: Equal progreso<br>- Rama 1: Equal cursos |
 | **HTTP Request (Rama 0)** | Method | POST |
 | **HTTP Request (Rama 0)** | URL | `http://localhost:8765/bd` |
@@ -453,7 +453,8 @@ Webhook → HTTP Request → Respond to Webhook
 { "tipo": "cursos",   "id_estudiante": "20220003" }
 ```
 
-<img width="1222" height="490" alt="image" src="https://github.com/user-attachments/assets/3ad4620b-c374-4e06-bc48-3b2f5ca184de" />
+<img width="1311" height="485" alt="image" src="https://github.com/user-attachments/assets/9b47d8b9-af51-4a56-93e0-6c32abeb8eff" />
+
 
 
 
