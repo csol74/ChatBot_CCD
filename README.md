@@ -40,7 +40,7 @@ Estudiante (App React / React Native)
 [WF1]      [WF2]   [Google Sheets]
 [/chatbot] [/consulta] Calendario CCD
      │        │
-     ▼        ▼ (Enrutado por Switch)
+     ▼        ▼ (Enrutado por if)
 [FastAPI — JupyterHub — localhost:8765]
      │        │
      ▼        ▼
@@ -435,7 +435,6 @@ Webhook → HTTP Request → Respond to Webhook
 | **Webhook** | Method | POST |
 | **if** | Condition | {{ $json.body.tipo }} is equal to 'proceso' |
 | **if** | Default | cursos  |
-| **Switch** | Routing Rules | - Rama 0: Equal progreso<br>- Rama 1: Equal cursos |
 | **HTTP Request (Rama 0)** | Method | POST |
 | **HTTP Request (Rama 0)** | URL | `http://localhost:8765/bd` |
 | **HTTP Request (Rama 0)** | Body | `{"tipo": "progreso", "id_estudiante": "{{ $('Webhook').item.json.body.id_estudiante }}"}` |
