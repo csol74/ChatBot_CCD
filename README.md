@@ -424,7 +424,8 @@ Webhook → HTTP Request → Respond to Webhook
 
 **Estructura:**
 ```
-Webhook → HTTP Request → Respond to Webhook
+Webhook → if → HTTP Request → code → Respond to Webhook
+             → HTTP Request → code
 ```
 
 **Configuración:**
